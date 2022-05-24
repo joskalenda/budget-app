@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'categories/index'
   get 'categories/show'
   get 'categories/new'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: "users#index"
 end
