@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'category_entities/index'
+  get 'category_entities/show'
+  get 'category_entities/new'
+  get 'category_entities/edit'
   devise_for :users
   get 'categories/index'
   get 'categories/show'
