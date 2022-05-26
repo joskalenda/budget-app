@@ -1,5 +1,7 @@
-/* @import "font-awesome-sprockets";
-@import "font-awesome"; */
+/* stylelint-disable-next-line CssSyntaxError */
+*= require font-awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 :root {
   --size-border: 2px solid var(--text-color);

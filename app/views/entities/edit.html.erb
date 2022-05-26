@@ -1,6 +1,6 @@
 <nav class="header-categories d-flex flex-center">
   <div class="icons">
-    <%= link_to  category_entity_path(@category, @entity) do %>
+    <%= link_to  category_entity_path do %>
       <i class="fa-solid fa-arrow-left back"></i>
     <% end %>
   </div>
@@ -10,4 +10,4 @@
   </div>
 </nav>
 
-<%= render "form", category: @category, entity: @entity %>
+<%= render "form", entity: @entity %>

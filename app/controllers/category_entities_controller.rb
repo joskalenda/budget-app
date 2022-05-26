@@ -1,9 +1,9 @@
 class CategoryEntitiesController < ApplicationController
-    before_action :set_category_record, only: %i[show edit update destroy]
+    before_action :set_category_entity, only: %i[show edit update destroy]
   
     # GET /category_records or /category_records.json
     def index
-      @category_entity = CategoryEntity.all
+      @category_entities = CategoryEntity.all
     end
   
     # GET /category_records/1 or /category_records/1.json
@@ -73,5 +73,4 @@ class CategoryEntitiesController < ApplicationController
     end
 
     private :set_category_entity, :category_entity_params
-  end
 end

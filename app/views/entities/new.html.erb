@@ -1,20 +1,20 @@
 <nav class="header-categories d-flex flex-center">
   <div class="icons">
-    <%= link_to  category_path(@category) do %>
-      <i class="fa-solid fa-arrow-left back"></i>
+    <%= link_to  categories_path(@category) do %>
+      <i><<- Categories</i>
     <% end %>
   </div>
   <h1 class="transaction-header-nav">NEW TRANSACTION</h1>
   <div class="actions-save">
-    <input type="submit" name="commit" value="save" class="login-button new-edit-cat" form="new-tran-from" data-disable-with="Log in">
+  <input type="submit" name="commit" value="save" class="login-button new-edit-cat" form="new-tran-from" data-disable-with="Log in">
   </div>
 </nav>
-
-<%= render "form", entity: @entity, category: @category %>
-
-<br>
-
-<div class="">
-  <% link_to "<<- Entities", category_entities_path(@category, @entity) %>
-  <% link_to "<<- Categories", category_index_path %>
-</div>
+  
+  <%= render "form", entity: @entity, category: @category %>
+  
+  <br>
+  
+  <div class="">
+    <% link_to "<<- Entities", category_entities_path(@category, @entity) %>
+    <% link_to "<<- Categories", categories_path %>
+  </div>

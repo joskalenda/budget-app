@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :entities
   devise_for :users
+  root to: "users#index"
+  resources :categories, only: [:show, :index, :update, :new, :edit] do
+    resources :entities
+  end
+    
 
   authenticated :user do
     root 'categories#index', as: :authenticated_root
@@ -25,5 +28,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  # root to: "users#index"
 end

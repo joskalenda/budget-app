@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>My Entities</h1>
+<h1>My Transactions</h1>
 
 <div id="records">
   <% @entities.each do |entity| %>
     <%= render entity %>
+    <%= link_to "View", entity%>
   <% end %>
 </div>
 
-<%= link_to "+ Add Entity", new_category_entity_path %>
+<%= link_to "+ Add Transaction", new_entity_path %>

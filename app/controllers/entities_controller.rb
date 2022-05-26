@@ -1,7 +1,6 @@
 class EntitiesController < ApplicationController
   before_action :set_entity, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  load_and_authorize_resource :category
 
   def index
     @entities = Entity.all
@@ -10,11 +9,14 @@ class EntitiesController < ApplicationController
   def show
     @category = Category.find(params[:category_id])
     @entity = @category.entities.find(params[:id])
+    # @entity = @category.entities.order(created_at: :desc)
+
   end
 
   def new
-    @entity = Entity.new
     @category = Category.find(params[:category_id])
+    @entity = Entity.new
+
   end
 
   def edit; end
@@ -23,13 +25,17 @@ class EntitiesController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     @entity = Entity.new(entity_params)
+    p @category
     @entity.user = current_user
-    # @record.user_id = current_user.id
-    @entity.save!
-    category_entity = @category.category_entities.new(entity: @entity)
-    
+    # @entity.user_id = current_user.id
+    # @entity.save!
+    # category_entity = @category.category_entities.new(entity: @entity)
+    @entity.category_entities = @category
+    # @entity.category_entities << @category << @entity 
+    # @entity = CategoryEntity.create!(entity_id: @entity.id, category_id: @category.id) 
+  
     respond_to do |format|
-      if category_entity.save
+      if @entity.save
         format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
   
       else

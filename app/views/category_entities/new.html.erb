@@ -1,2 +1,11 @@
-<h1>CategoryEntities#new</h1>
-<p>Find me in app/views/category_entities/new.html.erb</p>
+<div class="header-categories">
+  <h1>NEW CATEGORY TRANSACTION</h1>
+</div>
+
+<%= render "form", category_record: @category_entity %>
+
+<br>
+
+<div>
+  <%= link_to "Back to category records", category_entities_path %>
+</div>
