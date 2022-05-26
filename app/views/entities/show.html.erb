@@ -13,6 +13,7 @@
   <h2></h2>
   <ul class="categoies-records">
     <li id="category-record" class="show">
+     <%= render @entity %>
 
       <ul>
         <li class='record d-flex flex-center'>
@@ -41,7 +42,7 @@
         <%= link_to "Update", edit_category_entity_path(@category, @entity) %>
       </div>
       <div class="delete-btn">
-        <%=button_to 'Delete', {:controller => :entities, :action => 'destroy', :id => @entity.id}, :method => :delete%>
+        <%=button_to 'Delete', {:controller => :entity, :action => 'destroy', :id => @entity.id}, :method => :delete%>
       </div>
   </div>
 

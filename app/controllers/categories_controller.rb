@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
   
   # GET /categories
@@ -9,7 +9,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @entity = @category.entities.order(created_at: :desc)
+    @category = Category.find(params[:id])
+    @entities = @category.entities.order(created_at: :desc)
   end
 
   # GET /categories/new
@@ -19,13 +20,22 @@ class CategoriesController < ApplicationController
 
   # POST /categories
   def create
-    @category = Category.new(category_params)
-    @category.user = current_user
+    category = Category.new(category_params)
+    # @category = current_user.categories.new(category_params)
+    category.user_id = current_user.id
 
-    if @category.save
-      redirect_to @category
-    else
-      render :new, status: :unprocessable_entity
+    # if @category.save
+    #   redirect_to @category
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
+
+    respond_to do |format|
+      if category.save
+        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -50,7 +60,7 @@ class CategoriesController < ApplicationController
   end
   
   def category_params
-    params.require(:category).permit(:name, :icon)
+    params.require(:category).permit(:name, :image)
   end
 
   private :set_category, :category_params

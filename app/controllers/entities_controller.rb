@@ -1,13 +1,15 @@
 class EntitiesController < ApplicationController
   before_action :set_entity, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+  load_and_authorize_resource :category
 
   def index
-    @entity = Entity.all
+    @entities = Entity.all
   end
 
   def show
     @category = Category.find(params[:category_id])
-    @entities = @category.entities.find(params[:id])
+    @entity = @category.entities.find(params[:id])
   end
 
   def new
@@ -19,17 +21,23 @@ class EntitiesController < ApplicationController
 
   # post/entities
   def create
+    @category = Category.find(params[:category_id])
     @entity = Entity.new(entity_params)
     @entity.user = current_user
-
-    if @entity.save
-      redirect_to entities_path(id: @entity.user_id)
-      flash[:notice] = 'Transaction added successfully!'
-    else
-      render :new
-      flash[:alert] = 'Error, transaction not added'
+    # @record.user_id = current_user.id
+    @entity.save!
+    category_entity = @category.category_entities.new(entity: @entity)
+    
+    respond_to do |format|
+      if category_entity.save
+        format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
+  
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
+
 
   def update
     if @entity.update(entity_params)

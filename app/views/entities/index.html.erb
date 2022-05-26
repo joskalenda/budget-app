@@ -2,17 +2,10 @@
 
 <h1>My Entities</h1>
 
-<ul id="records">
-  <% @entity.each do |entity| %>
-    <li class="">
-      <%= link_to entity do %>
-          <ul class="recipe">
-            <li class=""><span>name: </span><%= entity.name %></li>
-            <li class=""><span>amount: $ </span><%= entity.amount %></li>
-          </ul>
-      <% end %>
-    </li>  
+<div id="records">
+  <% @entities.each do |entity| %>
+    <%= render entity %>
   <% end %>
-</ul>
+</div>
 
-<%= link_to "Add entity", new_category_entity_path %>
+<%= link_to "+ Add Entity", new_category_entity_path %>

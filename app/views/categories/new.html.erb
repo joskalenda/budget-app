@@ -1,5 +1,12 @@
-<nav class="header-categories">
-  <h1>New category</h1>
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1 class="transaction-header-nav">NEW CATEGORY</h1>
 </nav>
 
-<%= render "form", category: @category %>
+<%= render "form", class:"category-form" %>
+
+<br>

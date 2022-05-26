@@ -1,16 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="header-categories">
-  <h1>CATEGORIES</h1>
-</div >
+<nav class="header-categories d-flex flex-center">
+  <%= link_to  destroy_user_session_path, class: "icons" do%>
+    <i class="fa-solid fa-right-from-bracket"></i>
+  <% end %>
+    <h1>CATEGORIES</h1>
+</nav>
+
+<p style="color: green"><%= notice %></p>
+
 <div class="categories">
+
+  <% if @categories == [] %>
+    <article class="category">
+      <p>No Category has been created yet !!!</p>
+    </article>
+  <% end %>
   <% @categories.each do |category| %>
     <%= link_to category do %>
-    <%= render category %>
+      <%= render category %>
     <%end%>
   <% end %>
 </div>
 
 <div class="new-cat-btn">
-  <button><%= link_to "Add category", new_category_path %></button> 
+  <button><%= link_to " + Add category", new_category_path %></button> 
 </div>
