@@ -49,7 +49,7 @@
         <p>No Transaction made yet !!!</p>
       <% end %>
       <% @category.recent_transactions.each do |entity| %>
-        <%= link_to entity do %>
+        <%= link_to category_entity_path(@category, entity) do %>
           <li id="category-record">
             <%= render 'entities/entity',  entity: entity %>
           </li>

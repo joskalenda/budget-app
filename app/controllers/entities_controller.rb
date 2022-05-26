@@ -1,6 +1,6 @@
 class EntitiesController < ApplicationController
-  before_action :set_entity, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :set_entity, only: %i[show edit update destroy]
 
   def index
     @entities = Entity.all
@@ -22,27 +22,46 @@ class EntitiesController < ApplicationController
   def edit; end
 
   # post/entities
+  # def create
+  #   @category = Category.find(params[:category_id])
+  #   @entity = Entity.new(entity_params)
+  #   # @entity.user = current_user
+  #   @entity.user_id = current_user.id
+  #   @entity.save!
+  #   category_entity = @category.category_entities.new(entity: @entity)
+  #   # @entity.category_entities = @category
+  #   # @entity.category_entities << @category.id 
+  #   CategoryEntity.create!(entity_id: @entity.id , category_id: @category.id) 
+  
+  #   respond_to do |format|
+  #     if category_entity.save
+  #       format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
+  
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
   def create
     @category = Category.find(params[:category_id])
     @entity = Entity.new(entity_params)
-    p @category
-    @entity.user = current_user
-    # @entity.user_id = current_user.id
-    # @entity.save!
-    # category_entity = @category.category_entities.new(entity: @entity)
-    @entity.category_entities = @category
-    # @entity.category_entities << @category << @entity 
-    # @entity = CategoryEntity.create!(entity_id: @entity.id, category_id: @category.id) 
-  
+    @entity.user_id = current_user.id
+    @entity.save!
+    category_record = @category.category_entities.new(entity: @entity)
+    # OR category_record = CategoryRecord.create!(category: @category, record: @record)
+
     respond_to do |format|
-      if @entity.save
+      if category_record.save
         format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
-  
+
       else
         format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
+
+
 
 
   def update

@@ -20,11 +20,11 @@ class CategoriesController < ApplicationController
 
   # POST /categories
   def create
-    category = Category.new(category_params)
+    @category = Category.new(category_params)
     # @category = current_user.categories.new(category_params)
-    category.user_id = current_user.id
+    @category.user_id = current_user.id
 
-    if category.save
+    if @category.save
       redirect_to categories_path
     else
       render :new, status: :unprocessable_entity
