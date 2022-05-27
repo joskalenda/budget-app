@@ -8,10 +8,10 @@
   --bacground-color: #e5e5e5;
   --primary-color: #298cfc33;
   --btn-color: #5fb523;
-  --secondary-color: #02428b;
-  --text-color: #434b54;
+  --secondary-color: #073e7e;
+  --text-color: #063c7a;
   --bg-color: #0372ef42;
-  --on-secondary: #fff;
+  --on-secondary: rgb(207, 204, 204);
   --shadow-color: #f1f1f2;
   --new-color: #3778ce;
 }
@@ -90,7 +90,7 @@ form#save-categ-from {
   transform: translate(-50%, -50%);
   width: 90%;
   padding: 3rem 2rem 2rem;
-  background-color: var(--primary-color);
+  background-color: var(--new-color);
   border-radius: 16px;
 }
 
@@ -104,7 +104,7 @@ form#save-categ-from {
   align-items: center;
   justify-content: space-around;
   background-color: var(--new-color);
-  border-radius: 0 100px 0 0;
+  border-radius: 100px 0 0 0;
 }
 
 .splash-page h1 {
@@ -113,32 +113,25 @@ form#save-categ-from {
   margin: 2.5rem 10px 0;
   text-align: center;
   color: var(--secondary-color);
-  background: #c2dcf926;
-
-  /* border: var(--box-border); */
+  background: #f1f3f526;
   border-radius: 20px;
   font-weight: 900;
 }
 
 .splash-page .user-icon {
-  flex-direction: column;
+  width: 200px;
+  height: auto;
+  border-radius: 100%;
 }
 
-.user-icon i {
-  color: var(--secondary-color);
-
-  /* color: rgba(4, 169, 169, 0.668); */
-}
-
-.user-icon h2 {
-  color: var(--secondary-color);
-  font-size: 1.9rem;
-  font-weight: 600;
+.user-icon img {
+  border-radius: 100%;
+  width: 100%;
 }
 
 .buttons {
   width: 90%;
-  background-color: var(--bg-color);
+  background: #f1f3f526;
   border-radius: 16px;
   padding: 1.7rem 0;
   margin-bottom: 2rem;
@@ -163,7 +156,7 @@ form#save-categ-from {
 
 .nav-splash {
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--new-color);
   padding: 1rem 0.5rem;
   border-radius: 4px  4px 0 0;
 }
@@ -208,7 +201,7 @@ form#save-categ-from {
   height: 70px;
   width: 100%;
   justify-content: space-around;
-  background-color: var(--primary-color);
+  background-color: var(--new-color);
 }
 
 .header-categories h1:not(.transaction-header-nav) {
@@ -348,6 +341,10 @@ form#save-categ-from {
   background-color: var(--primary-color);
 }
 
+.btns-record form button {
+  transform: translateX(-3rem);
+}
+
 .actions-save input {
   border: none !important;
   padding: 3px 5px;
@@ -466,4 +463,20 @@ input:hover:not(.input-file) {
 .icons i:hover {
   transform: scale(1.07);
   color: var(--on-secondary);
+}
+
+@media only screen and (min-width: 992px) {
+  .new-cat-btn button {
+    width: 50%;
+    margin: 0 auto;
+    transform: translateX(15rem);
+  }
+
+  .header-categories h1:not(.transaction-header-nav) {
+    transform: translateX(-5rem);
+  }
+
+  .btns-record form button {
+    transform: translateX(-6rem);
+  }
 }
