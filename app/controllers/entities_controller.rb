@@ -47,7 +47,7 @@ class EntitiesController < ApplicationController
   def destroy
     @entity = set_entity
     @entity.destroy
-    redirect_to category_path
+    redirect_to category_path(params[:category_id])
   end
 
   def set_entity
