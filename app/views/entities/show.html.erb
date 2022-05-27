@@ -3,7 +3,7 @@
 <nav class="header-categories d-flex flex-center">
   <div class="icons">
     <%= link_to  categories_path do %>
-      <i class="fa-solid fa-arrow-left back"></i>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
     <% end %>
   </div>
   <h1>Transaction details</h1>
@@ -23,7 +23,7 @@
           </span>
         </li>
         <div class="btns-record d-flex flex-center">
-          <%=button_to 'Delete', {:controller => :entities, :action => 'destroy', :id => @entity.id}, :method => :delete%>
+          <%=button_to 'Delete', {:controller => :entities, :action => 'destroy', :id => @entity.id}, :method => :delete %>
         </div>
       </ul>
     </li>
