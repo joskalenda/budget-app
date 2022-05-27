@@ -469,7 +469,7 @@ input:hover:not(.input-file) {
   .new-cat-btn button {
     width: 50%;
     margin: 0 auto;
-    transform: translateX(15rem);
+    transform: translateX(19rem);
   }
 
   .header-categories h1:not(.transaction-header-nav) {
@@ -477,6 +477,6 @@ input:hover:not(.input-file) {
   }
 
   .btns-record form button {
-    transform: translateX(-6rem);
+    transform: translateX(-8rem);
   }
 }
