@@ -14,7 +14,6 @@ class EntitiesController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
     @entity = Entity.new
-
   end
 
   def edit; end
@@ -60,5 +59,4 @@ class EntitiesController < ApplicationController
   end
 
   private :entity_params, :set_entity
-
 end
