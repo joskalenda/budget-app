@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  subject {Category.new(name: 'Neutral')}
-  before { subject.save}
+  subject { Category.new(name: 'Neutral') }
+  before { subject.save }
 
   it 'Should have correct name' do
     name = 'Neutral'

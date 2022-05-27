@@ -41,7 +41,6 @@ RSpec.describe 'Hello world', type: :feature do
       expect(page).to have_content('Signed in successfully.')
     end
 
-
     it 'Should redirect to the root path if email or password is filled with the correct data' do
       user = User.create!(email: 'userdev@dev.com', password: 'password')
       visit user_session_url

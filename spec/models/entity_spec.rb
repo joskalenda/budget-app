@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Entity, type: :model do
-  
-  subject {Entity.new(name: 'Bills', amount: 23, user_id: 1)}
-  before { subject.save}
+  subject { Entity.new(name: 'Bills', amount: 23, user_id: 1) }
+  before { subject.save }
 
   it 'Should have correct name' do
     name = 'Bills'
