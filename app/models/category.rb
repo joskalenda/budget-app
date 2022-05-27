@@ -4,6 +4,8 @@ class Category < ApplicationRecord
   has_many :entities, through: :category_entities
   has_one_attached :image
 
+  validates :name, presence: true
+
   def total_amount
     entities.sum('amount')
   end
