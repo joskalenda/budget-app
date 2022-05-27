@@ -72,4 +72,5 @@ group :test do
 end
 
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'

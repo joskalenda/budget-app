@@ -1,2 +1,28 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<nav class="header-categories d-flex flex-center">
+  <%= link_to  destroy_user_session_path class: "icons" do%>
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+  <% end %>
+    <h1>CATEGORIES</h1>
+</nav>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="categories">
+
+  <% if @categories.empty? %>
+    <article class="category">
+      <p>No Category found, please add one  !!!</p>
+    </article>
+  <% end %>
+  <% @categories.each do |category| %>
+    <%= link_to category do %>
+      <%= render category %>
+    <%end%>
+  <% end %>
+</div>
+
+<div class="new-cat-btn">
+  <button><%= link_to " + Add category", new_category_path %></button> 
+</div>

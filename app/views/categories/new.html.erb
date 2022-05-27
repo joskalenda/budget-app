@@ -1,2 +1,12 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path do %>
+      <i class="fa-solid fa-arrow-left back"></i>
+    <% end %>
+  </div>
+  <h1 class="transaction-header-nav">NEW CATEGORY</h1>
+</nav>
+
+<%= render "form", class:"category-form" %>
+
+<br>

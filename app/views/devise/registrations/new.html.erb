@@ -1,34 +1,42 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<nav class="nav-splash d-flex flex-center">
+  <%= link_to root_path, class: "icons" do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  <% end %>
+  <h2> SIGN UP <h2>
+</nav>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),data: { turbo: false }, html: { method: :post, class: "login-form d-flex" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="input field">
+    <% f.label :name %>
+    <div>
+      <%= f.text_field :name, autofocus: true, placeholder: "Your name", class: "text-box" %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class=" input field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Your email", class: "text-box"  %>
   </div>
 
-  <div class="field">
+  <div class="input field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "text-box"  %>
   </div>
 
-  <div class="field">
+  <div class="input field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm your password", class: "text-box" %>
   </div>
-
+  
   <div class="actions">
-    <%= f.submit "Sign up" %>
+  <%= f.submit "Sign up", class: "login-button" %>
   </div>
+  <p><strong>Already have an account?</strong></p></br>
+  
+  <%= render "devise/shared/links" %>
 <% end %>
 
-<%= render "devise/shared/links" %>

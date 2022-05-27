@@ -1,14 +1,18 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<nav class="nav-splash d-flex flex-center">
+  <%= link_to root_path, class: "icons" do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  <% end %>
+  <h2> SIGN IN <h2>
+</nav>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }, html: { method: "post", class: "login-form d-flex"}) do |f| %>
+  <div class=" input field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter email", class: "text-box"  %>
   </div>
 
-  <div class="field">
+  <div class="input field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter password", class: "text-box" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +23,14 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "login-button" %>
+  </div>
+  <p><strong>First time?</strong></p></br>
+
+  <%= link_to 'Sign up', new_user_registration_path %>
+  
+  <div class="act d-flex flex-center">
+  <% render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
