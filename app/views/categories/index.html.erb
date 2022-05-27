@@ -2,7 +2,7 @@
 
 <nav class="header-categories d-flex flex-center">
   <%= link_to  destroy_user_session_path, class: "icons" do%>
-    <i>Sign out</i>
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
   <% end %>
     <h1>CATEGORIES</h1>
 </nav>
@@ -11,9 +11,9 @@
 
 <div class="categories">
 
-  <% if @categories == [] %>
+  <% if @categories.empty? %>
     <article class="category">
-      <p>No Category has been created yet !!!</p>
+      <p>No Category found, please add one  !!!</p>
     </article>
   <% end %>
   <% @categories.each do |category| %>

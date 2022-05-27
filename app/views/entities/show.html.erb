@@ -22,28 +22,10 @@
             <span>_<%= @entity.created_at.to_formatted_s(:short) %></span>
           </span>
         </li>
-
-        <li class='record d-flex flex-center'>
-          <% if @entity.created_at == @entity.updated_at %>
-            <p><strong>No Update yet !!!</strong></p>
-          <% else %>
-            <p> <strong>Update Date: </strong> <p>
-            <span class="date d-flex"> <%= @entity.updated_at.strftime('%Y') %>
-              <span>_<%= @entity.updated_at.to_formatted_s(:short) %></span>
-            </span>
-          <% end %>
-        </li>
+        <div class="btns-record d-flex flex-center">
+          <%=button_to 'Delete', {:controller => :entities, :action => 'destroy', :id => @entity.id}, :method => :delete%>
+        </div>
       </ul>
     </li>
   </ul>
-
-  <div class="btns-record d-flex flex-center">
-      <div class="actions-btn">
-        <%= link_to "Update", edit_category_entity_path(@category, @entity) %>
-      </div>
-      <div class="delete-btn">
-        <%=button_to 'Delete', {:controller => :entity, :action => 'destroy', :id => @entity.id}, :method => :delete%>
-      </div>
-  </div>
-
 </div>
