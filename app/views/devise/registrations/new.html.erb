@@ -4,7 +4,7 @@
   <% end %>
   <h2> SIGN UP <h2>
 </nav>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name),data: { turbo: false }, html: { method: :put, class: "login-form d-flex" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),data: { turbo: false }, html: { method: :post, class: "login-form d-flex" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="input field">
@@ -37,8 +37,6 @@
   </div>
   <p><strong>Already have an account?</strong></p></br>
   
-  <div class="act d-flex flex-center" >
-    <%= render "devise/shared/links" %>
-  </div>
+  <%= render "devise/shared/links" %>
 <% end %>
 

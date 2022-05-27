@@ -4,7 +4,7 @@
   <% end %>
   <h2> SIGN IN <h2>
 </nav>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }, html: { class: "login-form d-flex"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }, html: { method: "post", class: "login-form d-flex"}) do |f| %>
   <div class=" input field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter email", class: "text-box"  %>
