@@ -215,7 +215,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Credit to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella), the author of the original [design guidelines](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- Credit to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella), the author of the original [creative common license](...)
 
 
 ## 📝 License
