@@ -15,14 +15,14 @@
 
 ### Screenshots 📸
 
-|       Home Page                 |          Category Page                |         Add Category Form                |
-:--------------------------------:|:-------------------------------------:|:-------------------------------------------:|
-![]() |![]() |![]() |
+|       Home Page                 |          Category Page                |        Category details    |
+:--------------------------------:|:-------------------------------------:|:--------------------------:|
+![](readme-assets/home.png) |![](readme-assets/categories.png) |![](readme-assets/categorydetails.png) |
 
 
-|         Category-Transaction    |        Add Transaction Form           |         Transaction Details                |
-:--------------------------------:|:-------------------------------------:|:-------------------------------------------:|
-![]() |![]() |![]() |
+|         Sign in form            |        Sign up form                   |    Transaction Details    |
+:--------------------------------:|:-------------------------------------:|:-------------------------:|
+![](readme-assets/login.png) |![](readme-assets/signup.png) |![](readme-assets/tansactiondetails.png) |
 
 
 ## Live Demo 🔗
