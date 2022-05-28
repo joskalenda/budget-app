@@ -104,7 +104,6 @@ form#save-categ-from {
   align-items: center;
   justify-content: space-around;
   background-color: var(--new-color);
-  border-radius: 100px 0 0 0;
 }
 
 .splash-page h1 {
@@ -463,6 +462,19 @@ input:hover:not(.input-file) {
 .icons i:hover {
   transform: scale(1.07);
   color: var(--on-secondary);
+}
+
+.divNotice {
+  display: flex;
+  background-color: var(--new-color);
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.notice {
+  color: rgb(4, 248, 45);
+  font-weight: bold;
+  padding: 4px;
 }
 
 @media only screen and (min-width: 992px) {
