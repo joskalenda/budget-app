@@ -13,7 +13,9 @@
   - introduce new transactions associated with a category.
   - see the money spent on each category regarding transaction.
 
-### Screenshots 📸
+### Viewshots 📸
+
+
 
 |       Home Page                 |          Category Page                |        Category details    |
 :--------------------------------:|:-------------------------------------:|:--------------------------:|
