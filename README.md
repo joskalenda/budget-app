@@ -215,7 +215,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Credit to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella), the author of the original [creative common license](...)
+- Credit to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella), the author of the original [creative common license](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 ## 📝 License
